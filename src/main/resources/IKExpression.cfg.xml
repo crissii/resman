@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<function-configuration>
+	<!-- 系统函数默认配置 -->
+	<bean class="org.wltea.expression.function.SystemFunctions">
+		<function name="CONTAINS" method="contains">
+			<parameter-type>java.lang.String</parameter-type>
+			<parameter-type>java.lang.String</parameter-type>
+		</function>
+		<function name="STARTSWITH" method="startsWith">
+			<parameter-type>java.lang.String</parameter-type>
+			<parameter-type>java.lang.String</parameter-type>
+		</function>
+		<function name="ENDSWITH" method="endsWith">
+			<parameter-type>java.lang.String</parameter-type>
+			<parameter-type>java.lang.String</parameter-type>
+		</function>
+		<function name="CALCDATE" method="calcDate">
+			<parameter-type>java.util.Date</parameter-type>
+			<parameter-type>int</parameter-type>
+			<parameter-type>int</parameter-type>
+			<parameter-type>int</parameter-type>
+			<parameter-type>int</parameter-type>
+			<parameter-type>int</parameter-type>
+			<parameter-type>int</parameter-type>
+		</function>
+		<function name="SYSDATE" method="sysDate" />
+		<function name="DAYEQUALS" method="dayEquals">
+			<parameter-type>java.util.Date</parameter-type>
+			<parameter-type>java.util.Date</parameter-type>
+		</function>
+	</bean>
+	
+	<!-- 用户函数配置  请在这里定制您自己的函数-->
+	<bean class="com.sunsharing.hlvideoserver.express.MyExpress">
+		<function name="substring" method="substring">
+			<parameter-type>java.lang.String</parameter-type>
+			<parameter-type>java.lang.Integer</parameter-type>
+			<parameter-type>java.lang.Integer</parameter-type>
+		</function>
+        <function name="getCurrentTime" method="getCurrentTime">
+        </function>
+        <function name="string2int" method="string2int">
+            <parameter-type>java.lang.String</parameter-type>
+        </function>
+        <function name="getYear" method="getYear">
+            <parameter-type>java.lang.String</parameter-type>
+        </function>
+
+        <function name="isBlank" method="isBlank">
+            <parameter-type>java.lang.String</parameter-type>
+        </function>
+        <function name="monthDiff" method="monthDiff">
+            <parameter-type>java.lang.String</parameter-type>
+            <parameter-type>java.lang.String</parameter-type>
+        </function>
+	</bean>
+
+
+</function-configuration>
